@@ -25,6 +25,15 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
+app.get('/api/users', (req, res) => {
+  const { page } = req.query;
+
+  setTimeout(()=>
+      res.json({
+        data: `Users from page ${page}`
+      })
+    , 1000)
+});
 
 /**
  * Serve static files from /browser
